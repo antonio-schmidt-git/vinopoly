@@ -1,0 +1,26 @@
+{
+  "name": "vinopoly",
+  "version": "0.0.0",
+  "description": "vinopoly winery mrp",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "vinopoly",
+    "winery",
+    "mrp"
+  ],
+  "authors": [
+    "Antonio Schmidt"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
