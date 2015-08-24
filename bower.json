@@ -23,7 +23,9 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "angular": "~1.4.4"
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-bootstrap": "~0.13.3",
+    "bootstrap-sass": "~3.3.5"
   }
 }
