@@ -1,0 +1,30 @@
+{
+  "name": "vinopoly",
+  "version": "0.1.0",
+  "description": "vinopoly winery mrp",
+  "main": "src/shared/views/index.html",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonio-schmidt-git/vinopoly.git"
+  },
+  "keywords": [
+    "vinopoly",
+    "winery",
+    "mrp"
+  ],
+  "author": "Antonio Schmidt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antonio-schmidt-git/vinopoly/issues"
+  },
+  "homepage": "https://github.com/antonio-schmidt-git/vinopoly#readme"
+}
