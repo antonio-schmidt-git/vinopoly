@@ -1,8 +1,10 @@
 var gulp = require('gulp');
-var install = require("gulp-install");
+var plugins = require('gulp-load-plugins')();
 
-gulp.task('init', function() {
-    gulp
-        .src(['package.json','bower.json'])
-        .pipe(install());
-});
+function getTask(task) {
+    return require('./build/tasks/' + task)(gulp, plugins);
+}
+
+gulp.task('environment-install', getTask('environment/install'));
+
+gulp.task('init', ['environment-install'], function () {});
