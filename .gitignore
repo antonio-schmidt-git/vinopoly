@@ -1,4 +1,6 @@
 .idea/
+!.idea/jsLinters
+
 node_modules/*
 src/packages/*
 
