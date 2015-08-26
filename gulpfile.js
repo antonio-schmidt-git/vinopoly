@@ -5,6 +5,10 @@ function getTask(task) {
     return require('./build/tasks/' + task)(gulp, plugins);
 }
 
-gulp.task('environment-install', getTask('environment/install'));
+// INSTALL
+gulp.task('install', getTask('environment/install'));
 
-gulp.task('init', ['environment-install'], function () {});
+// INIT
+
+
+// BUILD
