@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
-function _getTask(task) {
+function _getPipe(task) {
     return require('../' + task)(gulp, plugins);
 }
 
-module.exports = _getTask;
+module.exports = _getPipe;
