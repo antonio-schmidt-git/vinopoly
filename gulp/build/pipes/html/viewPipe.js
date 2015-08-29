@@ -1,10 +1,12 @@
 var gulp = require('gulp');
-var config = require('../../../config')();
+var config = require('../../../config');
+var htmlOptimizationPipe = require('./htmlOptimizationPipe');
 
 function _viewPipe() {
-    gulp
-        .src(config.sharedViewFiles)
+    return gulp
+        .src(config.viewFiles)
+        .pipe(htmlOptimizationPipe())
         .pipe(gulp.dest('dist'));
 }
 
-module.exports = _viewPipe;
+module.exports = _viewPipe();
