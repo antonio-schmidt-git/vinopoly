@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var getPipe = require('./gulp/utils/getPipe');
 
 // INSTALL
 gulp.task('install', ['_install']);
@@ -9,6 +8,25 @@ gulp.task('dev', ['_dev']);
 
 // BUILD
 gulp.task('build', ['_re-build']);
+
+
+var inlineAngularTemplates = require('gulp-inline-angular-templates');
+gulp.task('templates', function () {
+    gulp.src('src/shared/templates/**/*.html')
+        .pipe(inlineAngularTemplates('dist/index.html', {
+            base: 'dist/templates',
+            prefix: '/',
+            selector: 'body',
+            method: 'append',
+            unescape: {
+                '&lt;': '<',
+                '&gt;': '>',
+                '&apos;': '\'',
+                '&amp;': '&'
+            }
+        }))
+        .pipe(gulp.dest('dist'));
+});
 
 
 

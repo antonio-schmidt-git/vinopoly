@@ -1,7 +1,10 @@
 var gulp = require('gulp');
-var getPipe = require('../../utils/getPipe');
+var viewPipe = require('../pipes/html/viewPipe');
 
-gulp.task('_htmlTask', getPipe('build/pipes/html/htmlPipe'));
+
+gulp.task('_htmlTask', function () {
+    return viewPipe();
+});
 
 var _build = gulp.task('_build', ['_htmlTask']);
 
