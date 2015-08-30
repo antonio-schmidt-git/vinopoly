@@ -6,6 +6,7 @@ config.optimize = true;
 
 config.viewFiles = 'views/**/*.html';
 config.srcPath = 'src';
+config.distPath = 'dist';
 config.sharedFolder = 'shared';
 config.componentsFolder = 'components';
 

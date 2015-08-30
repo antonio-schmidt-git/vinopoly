@@ -1,9 +1,8 @@
 var gulp = require('gulp');
-var clean = require('gulp-clean');
+var del = require('del');
 
 var _clean = gulp.task('_clean', function () {
-    return gulp.src('./dist', {read: false})
-        .pipe(clean());
+    return del.sync(['./dist/**']);
 });
 
 module.exports = _clean;
