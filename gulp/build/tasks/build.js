@@ -3,7 +3,7 @@ var viewPipe = require('../pipes/html/viewPipe');
 
 
 gulp.task('_htmlTask', function () {
-    return viewPipe;
+    return viewPipe();
 });
 
 var _build = gulp.task('_build', ['_htmlTask']);

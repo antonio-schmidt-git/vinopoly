@@ -8,7 +8,7 @@ function _htmlOptimizationPipe() {
         removeComments: true,
         removeCommentsFromCDATA: true,
         collapseWhitespace: true,
-        conservativeCollapse: true,
+        conservativeCollapse: false,
         collapseBooleanAttributes: true,
         removeAttributeQuotes: true,
         removeRedundantAttributes: true,
