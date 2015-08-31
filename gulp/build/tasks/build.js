@@ -1,11 +1,6 @@
 var gulp = require('gulp');
-var viewPipe = require('../pipes/html/viewPipe');
+var _buildHtml = require('./buildHtml');
 
-
-gulp.task('_htmlTask', function () {
-    return viewPipe();
-});
-
-var _build = gulp.task('_build', ['_htmlTask']);
+var _build = gulp.task('_build', ['_buildHtml']);
 
 module.exports = _build;

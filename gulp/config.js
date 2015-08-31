@@ -21,5 +21,6 @@ config.componentsViewFiles = path.join(config.componentsSubFolderPath, config.vi
 config.componentsTemplateFiles = path.join(config.componentsSubFolderPath, config.templateFiles);
 
 config.viewFiles = [config.sharedViewFiles, config.componentsViewFiles];
+config.templateFiles = [config.sharedTemplateFiles/*, config.componentsTemplateFiles*/];
 
 module.exports = config;
