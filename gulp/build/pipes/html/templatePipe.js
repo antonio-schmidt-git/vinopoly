@@ -1,37 +1,31 @@
 var gulp = require('gulp');
+var replace = require('gulp-replace');
 var config = require('../../../config');
-var htmlOptimizationPipe = require('./htmlOptimizationPipe');
-var inlineAngularTemplates = require('gulp-inline-angular-templates');
+var lazyPipe = require('lazypipe');
+var inject = require('gulp-inject');
+var wrapper = require('gulp-wrapper');
+var rename = require('gulp-rename');
+
+
+function _templateSourcePipe() {
+    return gulp.src(config.templateFiles)
+        .pipe(wrapper({
+            header: '<script type="text/ng-template" id="${filename}">\n',
+            footer: '</script>\n'
+        }));
+
+}
 
 function _templatePipe() {
-    var inlineTemplateOptions = {
-        base: 'dist/templates',
-        prefix: '/',
-        selector: 'body',
-        method: 'append',
-        unescape: {
-            '&lt;': '<', '&gt;': '>', '&apos;': '\'', '&amp;': '&'
+    var injectOptions = {
+        starttag: '<!-- inject:html -->',
+        transform: function (filePath, file) {
+            return file.contents.toString('utf8');
         }
     };
 
-    return gulp.src(config.templateFiles)
-        .pipe(inlineAngularTemplates('dist/index.html', inlineTemplateOptions));
+    return lazyPipe()
+        .pipe(inject, _templateSourcePipe(), injectOptions);
 }
 
-module.exports = _templatePipe;
-
-
-gulp.src('src/shared/templates/**/*.html')
-    .pipe(inlineAngularTemplates('dist/index.html', {
-        base: 'dist/templates',
-        prefix: '/',
-        selector: 'body',
-        method: 'append',
-        unescape: {
-            '&lt;': '<',
-            '&gt;': '>',
-            '&apos;': '\'',
-            '&amp;': '&'
-        }
-    }))
-    .pipe(gulp.dest('dist'));
+module.exports = _templatePipe();
