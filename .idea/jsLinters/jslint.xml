@@ -8,7 +8,7 @@
     <option maxlen="500" />
     <option nomen="true" />
     <option plusplus="true" />
-    <option predef="angular, describe, beforeEach, afterEach, module, expect, it, inject, require, _" />
+    <option predef="angular, describe, beforeEach, afterEach, module, expect, it, inject, require, _, console" />
     <option regexp="true" />
     <option sloppy="true" />
     <option unparam="true" />
