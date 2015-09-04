@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var replace = require('gulp-replace');
 var config = require('../../../config');
 var lazyPipe = require('lazypipe');
-var inject = require('gulp-inject');
+var gulpInject = require('gulp-inject');
 var wrapper = require('gulp-wrapper');
 var rename = require('gulp-rename');
 
@@ -45,7 +45,7 @@ function _templatePipe() {
     };
 
     return lazyPipe()
-        .pipe(inject, _templateSourcePipe(), injectOptions);
+        .pipe(gulpInject, _templateSourcePipe(), injectOptions);
 }
 
 module.exports = _templatePipe();
